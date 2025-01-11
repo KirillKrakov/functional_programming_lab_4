@@ -24,11 +24,8 @@ defmodule Lab4.Main do
 
   defp input_loop(pid) do
     case IO.gets("> ") |> String.trim() do
-      "!send" <> text ->
+      "send:" <> text ->
         GenServer.call(pid, {:send_message, String.trim(text)})
-
-      "!recon" ->
-        IO.puts("Переподключение пока не реализовано :(")
 
       _ ->
         IO.puts("Неизвестная команда.")

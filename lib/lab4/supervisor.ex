@@ -20,7 +20,7 @@ defmodule Lab4.Supervisor do
       },
       %{
         id: Lab4.Server,
-        start: {Lab4.Server, :start_link, [String.to_integer(System.get_env("PORT", "1337"))]},
+        start: {Lab4.Server, :start_link, [String.to_integer(System.get_env("PORT", "2025"))]},
         restart: :permanent,
         shutdown: 2000,
         type: :worker
